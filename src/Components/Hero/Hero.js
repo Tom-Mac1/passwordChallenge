@@ -50,7 +50,7 @@ function Hero() {
                 <button onClick={() => setLength(length+1)}>+</button>
             </div>
             <div className="selector">
-                <button>Generate Password</button>
+                <h1>Password: </h1>
                 <p>{Pass(length, upper, lower, numbers, special)}</p>
             </div>
         </div>
