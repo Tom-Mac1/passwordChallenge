@@ -47,6 +47,7 @@ function Hero() {
                 <br/>
                 <p>Length: {length}</p>
                 <button className="Btn" onClick={() => length === 0 ? setLength(length) : setLength(length-1)}>-</button> 
+                <br/>
                 <button className="Btn" onClick={() => setLength(length+1)}>+</button>
             </div>
             <div className="selector">
