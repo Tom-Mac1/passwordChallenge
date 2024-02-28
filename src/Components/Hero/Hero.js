@@ -1,5 +1,5 @@
 /* Need to be able to set length, and choose certain characters to exclude (upper, lower, special, numerical)*/
-
+import "./Hero.css";
 import { useState } from "react";
 
 function Pass(length, upperVar, lowerVar, numsVar, specVar) {
@@ -37,17 +37,17 @@ function Hero() {
     return(
         <div className="HeroPage">
             <div className="Options">
-                <button onClick={() => upper === "true" ? setUpper("false") : setUpper("true")}>UPPER: {upper}</button>
+                <button className="Btn" onClick={() => upper === "true" ? setUpper("false") : setUpper("true")}>UPPER: {upper}</button>
                 <br/>
-                <button onClick={() => lower === "true" ? setLower("false") : setLower("true")}>lower: {lower}</button>
+                <button className="Btn" onClick={() => lower === "true" ? setLower("false") : setLower("true")}>lower: {lower}</button>
                 <br/>
-                <button onClick={() => numbers === "true" ? setNumbers("false") : setNumbers("true")}>Numbers: {numbers}</button>
+                <button className="Btn" onClick={() => numbers === "true" ? setNumbers("false") : setNumbers("true")}>Numbers: {numbers}</button>
                 <br/>
-                <button onClick={() => special === "true" ? setSpecial("false") : setSpecial("true")}>Special: {special}</button>
+                <button className="Btn" onClick={() => special === "true" ? setSpecial("false") : setSpecial("true")}>Special: {special}</button>
                 <br/>
                 <p>Length: {length}</p>
-                <button onClick={() => length === 0 ? setLength(length) : setLength(length-1)}>-</button> 
-                <button onClick={() => setLength(length+1)}>+</button>
+                <button className="Btn" onClick={() => length === 0 ? setLength(length) : setLength(length-1)}>-</button> 
+                <button className="Btn" onClick={() => setLength(length+1)}>+</button>
             </div>
             <div className="selector">
                 <h1>Password: </h1>
