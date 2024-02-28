@@ -18,8 +18,17 @@ function Hero() {
     
     return(
         <div className="HeroPage">
+            <div className="Options">
+                <button>UPPER</button>
+                <br/>
+                <button>lower</button>
+                <br/>
+                <button>Numbers</button>
+                <br/>
+                <button>Special</button>
+            </div>
             <div className="selector">
-                <button></button>
+                <button>Generate Password</button>
                 <p>{Pass()}</p>
             </div>
         </div>
