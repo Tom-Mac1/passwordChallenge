@@ -2,12 +2,24 @@
 
 import { useState } from "react";
 
-function Pass(length) {
+function Pass(length, upperVar, lowerVar, numsVar, specVar) {
     var password = "";
-    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var lower = "abcdefghijklmnopqrstuvwxyz";
-    var nums = "1234567890";
-    var special = "?!£$%^&*()";
+    var upper = "";
+    var lower = "";
+    var nums = "";
+    var special = "";
+    if (upperVar === "true"){
+        upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    if (lowerVar === "true"){
+        lower = "abcdefghijklmnopqrstuvwxyz";
+    }
+    if (numsVar === "true"){
+        nums = "1234567890";
+    } 
+    if (specVar === "true"){
+        special = "?!£$%^&*()";
+    }
     var characters = upper + lower + nums + special;
     /* create useffect for upperselect, lowerselect, nums and join them into one list based on whats true */
     /* create one for count with an up/down toggle */
@@ -39,7 +51,7 @@ function Hero() {
             </div>
             <div className="selector">
                 <button>Generate Password</button>
-                <p>{Pass(length)}</p>
+                <p>{Pass(length, upper, lower, numbers, special)}</p>
             </div>
         </div>
     )
