@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/passwordChallenge/static/css/main.f160563e.css",
+    "main.js": "/passwordChallenge/static/js/main.772f3c2c.js",
+    "static/js/453.ed3810f9.chunk.js": "/passwordChallenge/static/js/453.ed3810f9.chunk.js",
+    "static/media/logo.svg": "/passwordChallenge/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/passwordChallenge/index.html",
+    "main.f160563e.css.map": "/passwordChallenge/static/css/main.f160563e.css.map",
+    "main.772f3c2c.js.map": "/passwordChallenge/static/js/main.772f3c2c.js.map",
+    "453.ed3810f9.chunk.js.map": "/passwordChallenge/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f160563e.css",
+    "static/js/main.772f3c2c.js"
+  ]
+}
