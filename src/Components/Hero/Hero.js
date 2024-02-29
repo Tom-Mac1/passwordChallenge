@@ -34,51 +34,29 @@ function Hero() {
     const [numbers, setNumbers] = useState("true");
     const [special, setSpecial] = useState("true");
     const [length, setLength] = useState(0);
-    const [generatedPassword, setGeneratedPassword] = useState("");
-    const [isGenerated, setIsGenerated] = useState(false);
-
-    const generatePassword = () => {
-        const password = Pass(length, upper, lower, numbers, special);
-        setGeneratedPassword(password);
-        setIsGenerated(true);
-
-        setTimeout(() => {
-            setGeneratedPassword("");
-            setIsGenerated(false);
-        }, 10000);
-    };
-
-    const copyToClipboard = () => {
-        navigator.clipboard.writeText(generatedPassword)
-            .then(() => {
-                console.log('Password copied to clipboard');
-                alert('Password copied to clipboard');})
-    };
-
     return(
         <div className="HeroPage">
             <div className="Options">
-                <button className="Btn" onClick={() => setUpper(prevState => prevState === "true" ? "false" : "true")}>UPPER: {upper}</button>
+                <button className="Btn" onClick={() => upper === "true" ? setUpper("false") : setUpper("true")}>UPPER: {upper}</button>
                 <br/>
-                <button className="Btn" onClick={() => setLower(prevState => prevState === "true" ? "false" : "true")}>lower: {lower}</button>
+                <button className="Btn" onClick={() => lower === "true" ? setLower("false") : setLower("true")}>lower: {lower}</button>
                 <br/>
-                <button className="Btn" onClick={() => setNumbers(prevState => prevState === "true" ? "false" : "true")}>Numbers: {numbers}</button>
+                <button className="Btn" onClick={() => numbers === "true" ? setNumbers("false") : setNumbers("true")}>Numbers: {numbers}</button>
                 <br/>
-                <button className="Btn" onClick={() => setSpecial(prevState => prevState === "true" ? "false" : "true")}>Special: {special}</button>
+                <button className="Btn" onClick={() => special === "true" ? setSpecial("false") : setSpecial("true")}>Special: {special}</button>
                 <br/>
                 <p>Length: {length}</p>
-                <button className="Btn" onClick={() => setLength(prevState => prevState === 0 ? prevState : prevState - 1)}>-</button> 
-                <button className="Btn" onClick={() => setLength(prevState => prevState + 1)}>+</button>
-                <br />
-                <button className="Btn" onClick={generatePassword}>Generate Password</button>
-                <button className="Btn" onClick={copyToClipboard} disabled={!isGenerated}>Copy to Clipboard</button>
+                <button className="Btn" onClick={() => length === 0 ? setLength(length) : setLength(length-1)}>-</button> 
+                <br/>
+                <button className="Btn" onClick={() => setLength(length+1)}>+</button>
             </div>
             <div className="selector">
                 <h1>Password: </h1>
-                <p>{generatedPassword}</p>
+                <p>{Pass(length, upper, lower, numbers, special)}</p>
             </div>
         </div>
     )
+    
 }
 
 export default Hero;
